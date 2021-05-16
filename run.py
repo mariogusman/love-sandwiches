@@ -52,12 +52,18 @@ def update_sales_worksheet(data):
     """
     Updates sales worksheet, add new row with the list data provided
     """
-    print("Updating sales worksheet...\n") #this gives feedback of whats happening
+    print("Updating sales worksheet...\n")  #gives feedback of whats happening
     sales_worksheet = SHEET.worksheet("sales") #value is name of sheet in the file
     sales_worksheet.append_row(data) #appends our input data to the sheet
     print("Sales Worksheet updated! \n") #confirms sheet is updated
-   
-      
-data = get_sales_data()
-sales_data = [int(num) for num in data]
-update_sales_worksheet(sales_data)
+
+def main():
+    """
+    Run all program functions
+    """
+    data = get_sales_data()
+    sales_data = [int(num) for num in data]
+    update_sales_worksheet(sales_data)
+
+print("Welcome to Love Sandwiches Data Automation.")
+main()
